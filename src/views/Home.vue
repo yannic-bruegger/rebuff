@@ -1,18 +1,36 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <v-slide-y-transition>
+      <v-container :v-show="show">
+        <transition name="slide"><upcoming-inspections/></transition>
+        <transition name="slide"><done-inspections/></transition>
+        <transition name="slide"><inspections filter="UPCOMING"/></transition>
+      </v-container>
+    </v-slide-y-transition>   
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  import UpcomingInspections from '../components/InspectionsListUpcoming'
+  import DoneInspections from '../components/InspectionsListDone'
+  import Inspections from '../components/InspectionsList'
 
-export default {
-  name: 'home',
-  components: {
-    HelloWorld
+  export default {
+    components: {
+      UpcomingInspections,
+      DoneInspections,
+      Inspections,
+    },
+    data(){
+      return{
+        show: false
+      }
+    },
+    created: function()
+    {
+      this.show = true;
+    }
   }
-}
 </script>
+<style>
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css";
+
+</style>

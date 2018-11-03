@@ -1,0 +1,17 @@
+{
+  "name": "Easy Milk Interface",
+  "short_name": "EMI",
+  "theme_color": "#607d8b",
+  "background_color": "#607d8b",
+  "orientation": "portrait",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": ".",
+  "icons": [
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
